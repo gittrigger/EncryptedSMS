@@ -1,0 +1,13 @@
+<resources>
+	<!-- messageid, recipient (number), contactid, status (0:deleted 1:working 2:ready 3:rsawait 4:sent 5:rsasend 6:sentwait 7:deliverywait 9:fail 10:rsawaitsentwait 11:rsawaitdeliverywait), -->
+	<string name="recipientStore_database">data</string>
+	<string name="recipientStore_table">recipientStore</string>
+	<string name="recipientStore_version">7</string>
+	<string name="recipientStore_columns">messageid integer, name text, uri text, tel text, contactid integer, useRSA text, e text, n text</string>
+		<!-- SQL create column syntax create table xxx (..., these entries, ...) -->
+	<string name="recipientStore_updates"></string>
+		<!-- SQL queries seperated by ; progressive updates can be added here -->
+		<!-- alter table recipientStore add column useRSA text; //drop column doesn't appear to be available. -->
+	<string name="recipientStore_indexlist">create index recipientStore_messageid on recipientStore(messageid);create index recipientStore_tel on recipientStore(tel)</string>
+		<!-- SQL queries seperated by ; used on successful table creation or update -->
+</resources>

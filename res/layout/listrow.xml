@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:id="@+id/listrowentry" xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_weight="1"
+    android:singleLine="true" 
+    android:layout_height="fill_parent" 
+    android:minHeight="40px" 
+    android:height="40px" 
+    android:gravity="center" />
+
+ 

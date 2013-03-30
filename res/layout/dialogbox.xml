@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+	android:padding="5px">
+	<TextView
+		android:id="@+id/dialogbox"
+		android:text="Intent i = new Intent(this, DialogBox.class);
+i.putExtra(&quot;title&quot;,&quot;New Title&quot;;);
+i.putExtra(&quot;body&quot;,&quot;Custom Message Body&quot;;);
+startActivity(i);" 
+		android:scrollbars="vertical" 
+		android:scrollbarStyle="outsideInset" android:layout_width="fill_parent" android:layout_height="wrap_content" android:textSize="16px"/>
+	
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="70px"
+			>
+			
+			<Button
+				android:id="@+id/button_one"
+				android:text="Close"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+			 	/>
+
+			 <Button
+				android:id="@+id/button_two"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+			 	android:text="Verify"/>
+
+			 <Button
+				android:id="@+id/button_three"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:layout_weight="1" android:text="Comm"/>
+				
+			<Button
+				android:id="@+id/button_four"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:layout_weight="1" android:text="Say, hi Doc"/>
+
+		</LinearLayout>
+	</LinearLayout>

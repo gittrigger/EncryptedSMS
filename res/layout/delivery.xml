@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+<TextView android:id="@+id/delivery_alpha" android:text="Line alpha(α)"  android:textSize="16px" android:layout_width="fill_parent" android:layout_height="80px" />
+
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="80px" >
+	<TextView android:layout_width="30px" android:layout_height="1px" />
+	<TextView android:background="#e0000003" android:textSize="16px" android:id="@+id/delivery_beta" android:text="Line beta(β)" android:layout_width="fill_parent" android:layout_height="80px" android:layout_weight="1" />
+</LinearLayout>
+
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1">
+	<TextView android:layout_width="60px" android:layout_height="1px" />
+	<TextView android:background="#e0000005" android:textSize="16px" android:id="@+id/delivery_gamma" android:text="Line gamma(γ)" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1" />
+	<ToggleButton android:textSize="16px" android:id="@+id/delivery_gamma_button" android:text="Line gamma(γ)" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1" />
+</LinearLayout>
+
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="80px">
+	<TextView android:layout_width="50px" android:layout_height="1px" />
+	<TextView android:background="#e0000007" android:textSize="16px" android:id="@+id/delivery_delta" android:text="Line delta(δ)" android:layout_width="fill_parent" android:layout_height="80px" android:layout_weight="1" />
+</LinearLayout>
+
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="80px" >
+	<TextView android:layout_width="40px" android:layout_height="1px" />
+	<TextView android:background="#e0000007" android:textSize="16px" android:id="@+id/delivery_epsilon" android:text="Line epsilon(ε)" android:layout_width="fill_parent" android:layout_height="80px" android:layout_weight="1" />
+</LinearLayout>
+
+<!--<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="80px" >
+	<TextView android:layout_width="30px" android:layout_height="1px" />
+	<TextView android:background="#e0000007" android:textSize="16px" android:id="@+id/delivery_zeta" android:text="Line zeta(ζ)" android:layout_width="fill_parent" android:layout_height="80px" android:layout_weight="1" />
+</LinearLayout>
+
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="?android:attr/listPreferredItemHeight" >
+	<TextView android:layout_width="20px" android:layout_height="1px" />
+	<TextView android:background="#e0000007" android:textSize="16px" android:id="@+id/delivery_eta" android:text="Line eta(η)" android:layout_width="fill_parent" android:layout_height="?android:attr/listPreferredItemHeight" android:layout_weight="1" />
+</LinearLayout>
+
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="?android:attr/listPreferredItemHeight" >
+	<TextView android:layout_width="10px" android:layout_height="1px" />
+	<TextView android:background="#e0000007" android:textSize="16px" android:id="@+id/delivery_theta" android:text="Line theta(θ)" android:layout_width="fill_parent" android:layout_height="?android:attr/listPreferredItemHeight" android:layout_weight="1" />
+</LinearLayout>
+
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="?android:attr/listPreferredItemHeight" >
+	<TextView android:background="#e0000007" android:textSize="16px" android:id="@+id/delivery_iola" android:text="Line iola(ι)" android:layout_width="fill_parent" android:layout_height="?android:attr/listPreferredItemHeight" android:layout_weight="1" />
+</LinearLayout>
+-->
+
+
+</LinearLayout>
+

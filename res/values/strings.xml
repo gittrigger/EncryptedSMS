@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="send_button_dialog">Send</string>
+    <string name="welcome">Welcome</string>
+    <string name="app_name">RSA SMS</string>
+    <string name="version">1</string>
+	<string name="reply_button_dialog">Reply</string>
+
+</resources>

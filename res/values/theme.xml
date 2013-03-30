@@ -1,0 +1,12 @@
+<resources>
+    <style name="Theme.NoBackground" parent="android:Theme">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+	<style name="Theme.Pad" parent="android:Theme">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="Theme.ClearDialog" parent="android:Theme">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+</resources>

@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:id="@+id/sendingrow"
+    android:layout_height="40px"
+    android:orientation="horizontal"
+    android:padding="3px" android:scrollbarStyle="outsideInset" android:gravity="center_vertical">
+
+	<TextView
+    	android:id="@+id/sendingrow_node"
+        android:layout_width="20px"
+        android:layout_height="10px"
+        android:gravity="center"
+        android:layout_margin="10px" android:background="#000000"/>
+
+    <TextView
+    	android:id="@+id/sendingrow_messageid"
+        android:layout_width="60px"
+        android:layout_height="fill_parent"
+        android:text="#405" 
+        
+        android:gravity="center" android:textSize="16px" android:textColor="#909090"/>
+        
+
+
+    <TextView  
+        android:id="@+id/sendingrow_name"
+
+        android:layout_width="fill_parent"
+        android:ellipsize="marquee"
+        android:text="Body"
+        android:marqueeRepeatLimit="1" android:fadingEdge="horizontal" 
+        android:gravity="center"
+        android:paddingLeft="2px" android:textSize="18px" android:shadowColor="#e0707070" android:shadowDx="1.5" android:shadowDy="1.5" android:layout_height="fill_parent" android:singleLine="true" android:shadowRadius="2.2"/>
+
+</LinearLayout>

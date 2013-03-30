@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_weight="1"
+	    >
+	<TextView
+		android:id="@+id/originator"
+		android:gravity="center" android:textSize="18dip" android:text="originator"
+	    android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:textColor="#e0a0a070"
+		android:layout_alignParentTop="true" android:bufferType="editable" 
+		android:fadingEdge="vertical" android:fadingEdgeLength="10dip" 
+		android:padding="10dip" android:background="#90000030"/>
+	<EditText
+		android:id="@+id/message"
+		android:gravity="center" android:text="message"
+	    android:layout_width="fill_parent" android:textColor="#e0f0f090"
+		android:layout_below="@+id/originator" android:layout_centerHorizontal="true" android:layout_height="fill_parent"
+		android:shadowDx="2.5" android:shadowDy="2.5" android:shadowRadius="5.2" 
+		android:scrollbars="horizontal|vertical" 
+		android:layout_weight="1" 
+		android:textSize="22dip" android:background="#90000030" android:scrollbarStyle="outsideInset" android:shadowColor="#A0f0f0f0" android:editable="false" android:cursorVisible="false" android:paddingBottom="20px" android:paddingLeft="10px" android:paddingRight="10px"/>
+	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_alignParentBottom="true" android:layout_below="@+id/message"
+	    android:background="#90000030" android:layout_height="wrap_content" android:visibility="gone">
+		<Button
+			android:id="@+id/reply_button"  
+			android:text="Reply"
+		    android:layout_width="fill_parent" android:layout_weight="1" android:layout_height="70px"/>
+		<Button
+			android:id="@+id/acknowledge_button"  
+			android:text="Acknowledge"
+		    android:layout_width="fill_parent" android:layout_weight="1" android:layout_height="70px"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+
+
+<!-- android:layout_height="?android:attr/listPreferredItemHeight" -->
+	<EditText
+		android:id="@+id/console"
+		android:layout_width="fill_parent" 
+	    android:layout_height="?android:attr/listPreferredItemHeight"
+	    android:scrollbars="vertical"
+	    android:textColor="#e0c0c060" 
+		android:scrollbarAlwaysDrawVerticalTrack="false" 
+		android:nextFocusDown="@+id/compose"
+		android:nextFocusUp="@+id/recipientlist"
+		android:typeface="monospace" android:scrollbarStyle="outsideInset" android:fadingEdgeLength="10px" android:fadingEdge="horizontal" android:background="#e0000030" android:textSize="16px" android:editable="false" android:focusable="false" android:focusableInTouchMode="true" android:freezesText="true" android:padding="10px" android:visibility="gone">
+		</EditText>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_weight="1"
+    android:layout_height="fill_parent">
+ 
+	<ListView android:id="@+id/android:list"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent" 
+		android:layout_weight="1"
+		android:layout_alignParentBottom="true"
+		android:scrollbarAlwaysDrawVerticalTrack="true"
+		android:scrollbars="vertical" android:scrollbarStyle="insideInset"
+		android:saveEnabled="true" android:background="#e0000010"/>
+
+
+<LinearLayout android:layout_weight="1" android:id="@+id/LinearLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical">
+
+<EditText
+		android:id="@+id/messagetitle"
+		android:layout_width="fill_parent" 
+	    android:gravity="right"
+	    android:scrollbars="vertical"  android:editable="false" 
+	    android:drawingCacheQuality="high" 
+	    android:padding="2px" android:textColor="#000000" android:textSize="30px" 
+	    android:text="MESSAGE" android:enabled="true" 
+	      
+	    android:layout_height="wrap_content" android:background="#e0909090" android:focusableInTouchMode="false" android:focusable="false" android:cursorVisible="false"/>
+
+	<EditText
+		android:id="@+id/compose"
+		android:layout_width="fill_parent"
+		android:layout_weight="1" 
+	    android:gravity="center_vertical|center_horizontal|center"
+	    android:scrollbars="vertical"  android:editable="true" 
+	    android:drawingCacheQuality="high" android:scrollbarStyle="outsideInset" 
+	    android:shadowRadius="2.75" android:shadowDy="1.4" android:shadowDx="1.4" 
+	    android:padding="2px" android:textColor="#c0c090" android:textSize="22px" 
+	    android:freezesText="true" android:enabled="true" android:nextFocusDown="@+id/selector3" 
+	    android:shadowColor="#909999FF" android:autoText="true" android:capitalize="sentences" 
+	    android:nextFocusUp="@+id/android:list" 
+	    android:layout_height="fill_parent" android:background="#e0000030"/>
+</LinearLayout>
+
+</LinearLayout>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:id="@+id/recipientbar"
+    android:layout_height="?android:attr/listPreferredItemHeight" android:paddingTop="2px" android:visibility="gone" android:background="#e0000020">
+ 
+	<Button
+		android:id="@+id/recipientstart"
+		android:layout_width="fill_parent" 
+	    android:nextFocusDown="@+id/selector3"
+	    android:singleLine="true"
+	    android:textSize="14px"
+	    android:marqueeRepeatLimit="1"
+	    android:layout_height="wrap_content"
+	    android:layout_weight="1"
+	    android:text="RSA SMS, Thank you. Choose a contact, long press to call, long press 'to' jumps to Contacts Application. Fast scroll ball up/down works as back/click. Hang out over a directional to browse your contacts.  Choose wether to send encrypted or clear in advance with the supplied toggle or press the recipient button (displays once you select a contact). Within the recipient button Long press a contact to remove from the distribution list."
+	    android:layout_gravity="center" android:gravity="center_vertical" android:minHeight="52px" android:ellipsize="marquee" android:nextFocusRight="@+id/useRSA" android:nextFocusUp="@+id/compose"/>
+
+ 
+	<Button
+		android:id="@+id/recipientlist"
+		android:layout_width="fill_parent" 
+	    android:nextFocusDown="@+id/selector3"
+	    android:singleLine="true"
+	    android:textSize="14px"
+	    android:marqueeRepeatLimit="1"
+	    android:layout_height="wrap_content"
+	    android:layout_weight="1"
+	    android:layout_gravity="center" android:text="RSA SMS, Thank you." android:gravity="center_vertical" android:minHeight="52px" android:ellipsize="marquee" android:nextFocusRight="@+id/useRSA" android:nextFocusUp="@+id/compose"/>
+	    
+	<ToggleButton
+		android:id="@+id/useRSA"
+		android:layout_width="?android:attr/listPreferredItemHeight"
+		android:textOff="RSA Off" android:textOn="RSA On" android:layout_gravity="center" 
+		android:layout_height="50px" android:textSize="12px" android:checked="true" 
+		android:nextFocusLeft="@+id/recipientlist" android:nextFocusUp="@+id/compose" 
+		android:nextFocusDown="@+id/selector4" android:nextFocusRight="@+id/selector2"/>
+		
+	    <!-- android:layout_weight="1" -->
+	    
+</LinearLayout>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:id="@+id/selectorbar"
+	    android:layout_gravity="top" android:gravity="top"
+	    android:layout_height="wrap_content" android:focusable="false" android:focusableInTouchMode="false" android:background="#e0000020">
+		<Button android:id="@+id/selector1" android:layout_height="?android:attr/listPreferredItemHeight" android:layout_weight="1" android:textSize="11px" android:ellipsize="middle" android:maxWidth="60px" android:layout_width="fill_parent"/>
+		<Button android:id="@+id/selector2" android:layout_width="fill_parent" android:layout_height="?android:attr/listPreferredItemHeight" android:layout_weight="1" android:textSize="11px" android:ellipsize="middle"/>
+		<Button android:id="@+id/selector3" android:layout_width="fill_parent" android:layout_height="?android:attr/listPreferredItemHeight" android:layout_weight="1" android:textSize="11px" android:ellipsize="middle"/>
+		<Button android:id="@+id/selector4" android:layout_width="fill_parent" android:layout_height="?android:attr/listPreferredItemHeight" android:layout_weight="1" android:textSize="11px" android:ellipsize="middle"/>
+		<Button android:id="@+id/selector5" android:layout_height="?android:attr/listPreferredItemHeight" android:layout_weight="1" android:textSize="11px" android:ellipsize="middle" android:maxWidth="60px" android:layout_width="fill_parent" android:nextFocusUp="@+id/useRSA"/>
+	    </LinearLayout>
+    
+</LinearLayout>

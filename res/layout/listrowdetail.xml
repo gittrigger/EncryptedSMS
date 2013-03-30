@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:id="@+id/listrowdetail"
+    android:layout_height="?android:attr/listPreferredItemHeight" android:padding="3px" android:scrollbarStyle="outsideInset" android:background="#e0000040">
+    
+
+    <TextView
+    	android:id="@+id/listrowTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:singleLine="true"
+        android:text="Title" 
+        android:gravity="left" android:textSize="16px" android:paddingLeft="2px"/>
+        
+    <TextView
+    	android:id="@+id/listrowDate"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/listrowTitle"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:text="Date"
+        android:singleLine="true" 
+        android:textSize="12px" android:gravity="right" android:layout_width="wrap_content"/>
+
+
+    <TextView  
+        android:id="@+id/listrowDescription"
+
+        android:layout_width="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/listrowTitle"
+        
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:text="Body"
+        android:marqueeRepeatLimit="1" android:fadingEdge="horizontal" android:layout_height="wrap_content" android:background="#e0000020" android:gravity="center" android:paddingLeft="2px" android:textColor="#e0909030" android:shadowRadius="1.2" android:textSize="18px" android:shadowColor="#e0707070" android:shadowDx="1.5" android:shadowDy="1.5"/>
+
+</RelativeLayout>

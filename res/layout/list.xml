@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>    
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/listview"
+	android:orientation="vertical"
+	android:layout_height="fill_parent"
+	android:layout_width="fill_parent"
+	>
+	  	    
+	<ListView android:id="@+id/android:list"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent" 
+		android:minHeight="?android:attr/listPreferredItemHeight"
+		android:layout_weight="1"
+		android:layout_alignParentBottom="true"
+		android:scrollbarAlwaysDrawVerticalTrack="true"
+		android:scrollbars="vertical" android:scrollbarStyle="insideInset"
+		/>
+    <!-- android:fastScrollEnabled="true" -->
+	<TextView android:id="@+id/android:empty"    
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:text="Welcome"
+		android:layout_alignParentBottom="true" 
+		android:minHeight="100px" android:layout_gravity="center"
+		android:gravity="center" android:layout_weight="1"
+		/>
+		
+
+</LinearLayout>
+	          

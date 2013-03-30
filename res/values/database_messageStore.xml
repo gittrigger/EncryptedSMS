@@ -1,0 +1,73 @@
+<resources>
+	<!--
+	originator (mode: key request) 
+	status (<=0:delete 1:working 2:ready 3:rsakey 4:received 5:rsasend 6:fail 7:decrypt)
+	usersa (Default setting for new recipients added)
+	e n d (RSA generated local keys) (recipient keys are kept in recipientStore e n.)
+	decrypted copy of message using local e n d
+	message copy of original SMS body received (always encrypted)
+	(recipients are kept in recipientStore messageStore._id = recipientStore.messageid)
+	
+		mode: draft
+		RSASMS: messageStore NEW decrypted=message text, queue=draft, usersa=mRSAToggle, status=1(working)
+		RSASMS: recipientStore NEW rowId from draft as messageid, tel=number, contactid=_id(provider.contacts), status=1(working)
+		
+		
+		// April 10, 2009 I'm planning to rename the service to MessageService as it handles more than just receiving messages.
+		mode: ready for delivery from UI
+		RSASMS: messageStore UPDATE rowId from draft, queue=outbox, status=2(ready)
+		RSASMS: recipientStore UPDATE rowId from draft as messageid, status=2(ready)
+		
+		mode: ready for delivery from Service
+		MessageReceiverService: android.intent.action.SERVICE_STATE
+		MessageReceiverService: messageStore LOOKUPN decrypted where status is ready(2)
+		MessageReceiverService: recipientStore LOOKUPN tel,usersa where messageid=messageStore._id
+		
+		
+		MessageReceiverService: usersa=true: SEND tel "RSA SMS,"
+		MessageReceiverService: usersa=true: recipientStore UPDATE status=3(rsawait)
+		MessageReceiverService: usersa=false: SEND tel decrypted
+		MessageReceiverService: usersa=false: recipientStore UPDATE status=4(sent)
+
+		mode: key request
+		MessageReceiverService: android.provider.Telephony.SMS_RECEIVED message contains "RSA SMS,"
+		MessageReceiverService: GENERATE NEW RSA 1024 bit for e, n, d
+		MessageReceiverService: messageStore NEW originator, e, n, d, usersa=mRSAToggle, status=3(rsakey)
+		MessageReceiverService: SEND originator e, n formatted "RSAKEY:?@?:" (storage of int and status can be done after sending SMS)
+		
+		mode: receive key request reply
+		MessageReceiverService: android.provider.Telephony.SMS_RECEIVED body contains "RSAKEY:e@n:"
+		MessageReceiverService: recipientStore LOOKUPN _id where tel=originator and status=3(rsawait)
+		MessageReceiverService: recipientStore UPDATE e, n, status=5(rsasend) (mid-state useful for diagnosing mid-process crashing, symptom duplicate encrypted replies)
+		(Logic to be run on android.provider.Telephony.SMS_RECEIVED and android.intent.action.SERVICE_STATE and android.intent.action.BOOT_COMPLETE)
+		MessageReceiverService: recipientStore LOOKUPN _id,messageid,e,n,tel where status=5(rsasend)
+		MessageReceiverService: messageStore LOOKUP _id, decrypted where _id=messageid
+		MessageReceiverService: SEND tel ENCRYPT decrypted using e,n formatted "RSASMS:?:"
+		MessageReceiverService: recipientStore UPDATE status=4(sent)
+		
+		mode: receive message
+		MessageReceiverService: android.provider.Telephony.SMS_RECEIVED body contains "RSASMS:message:"
+		MessageReceiverService: messageStore NEW originator, message, queue=incoming, status=4(received)
+		rsaDecode()
+		MessageReceiverService: messageStore LOOKUPN originator, e, n, d, where status=3(rsakey) (multirow limit 10, most recent from originator with this status)
+		MessageReceiverService: DECRYPT message with e, n, d (try out multiple)
+		MessageReceiverService: messageStore NEW originator, message, decrypted, usersa=mRSAToggle, queue=inbox, e, n, status=4(received)
+		MessageReceiverService: updateMessageBody with decrypted
+		"Content-type: text/rsasms\n\n"
+
+		android.provider.Telephony.SMS_RECEIVED
+		android.provider.Telephony.SMS_SENT
+		android.intent.action.SERVICE_STATE
+		android.intent.action.BOOT_COMPLETED
+		
+	 -->
+	<string name="messageStore_database">data</string>
+	<string name="messageStore_table">messageStore</string>
+	<string name="messageStore_version">7</string>
+	<string name="messageStore_columns">originator text, title text, uri text, message text, decrypted text, queue text, rsarcpt number, clearrcpt number, rsawait number, complete number, usersa text, e text, n text, d text</string>
+		<!-- SQL create column syntax create table xxx (..., these entries, ...) -->
+	<string name="messageStore_updates"></string>
+		<!-- SQL queries seperated by ; progressive updates can be added here -->
+	<string name="messageStore_indexlist">create index messageStore_queue on messageStore(queue);create index messageStore_originator on messageStore(originator)</string>
+		<!-- SQL queries seperated by ; used on successful table creation or update  // maybe change this to just table.row,n -->
+</resources>

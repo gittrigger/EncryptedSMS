@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/tolist"
+	android:orientation="vertical"
+	android:layout_height="fill_parent"
+	android:layout_width="fill_parent"
+	>
+	
+	<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/tolist_scrollview"
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:scrollbars="vertical" android:scrollbarStyle="outsideInset" android:layout_height="fill_parent"
+		>
+			
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:id="@+id/tolist_linearlayout"
+			android:orientation="vertical"
+			android:layout_height="fill_parent"
+			android:layout_width="fill_parent"
+			></LinearLayout>
+			
+			<!-- android:layout_weight="1" -->
+	</ScrollView>
+
+	<TextView android:id="@+id/tolist_textview"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:text=""
+		android:visibility="gone"
+		/>
+		
+	<Button
+		android:id="@+id/tolist_button" 
+		android:visibility="gone" android:layout_height="?android:attr/listPreferredItemHeight" android:layout_width="fill_parent"
+		android:ellipsize="middle"/>
+		
+	<LinearLayout 
+		android:id="@+id/tolist_buttonbar"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		></LinearLayout>
+		
+</LinearLayout>
+
+	

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" android:padding="0px">
+ 
+	<TextView
+		android:id="@+id/listrowrsa_name"
+	    android:text="Haven Skys"
+	    android:ellipsize="middle" android:shadowRadius=".75" android:shadowDy=".5" android:shadowDx=".5" android:textSize="20px" android:layout_width="fill_parent" android:gravity="top|center_horizontal" android:layout_height="wrap_content"/>
+	    
+	<TextView
+		android:id="@+id/listrowrsa_number"
+	    android:textSize="10px"
+	    android:text="12065551212"
+	    android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_gravity="top|center_horizontal" android:layout_height="wrap_content" android:textColor="#a0a0a0"/>
+	    
+</LinearLayout>

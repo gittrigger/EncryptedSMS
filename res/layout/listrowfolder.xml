@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight" android:padding="2px">
+ 
+ 
+ <RadioButton
+		android:id="@+id/listrowfolder_active"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_gravity="center" 
+	android:saveEnabled="true" android:enabled="false" android:checked="false"/>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_weight="1"
+    android:padding="2px" android:layout_height="fill_parent">
+ 
+	<TextView
+		android:id="@+id/listrowfolder_decrypted"
+		android:nextFocusDown="@+id/compose"
+	    android:text="Haven Skys"
+	    android:ellipsize="middle" android:shadowRadius=".75" android:shadowDy=".5" android:shadowDx=".5" android:textSize="22px" android:layout_width="fill_parent" android:gravity="top|center_horizontal" android:layout_height="wrap_content"/>
+	<TextView
+		android:id="@+id/listrowrsa_number"
+		android:nextFocusDown="@+id/compose"
+	    android:textSize="12px"
+	    android:text="12065551212"
+	    android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_gravity="top|center_horizontal" android:layout_height="wrap_content" android:textColor="#a0a0a0"/>
+	
+	</LinearLayout>
+	    
+	<ToggleButton
+		android:id="@+id/listrowrsa_usersa"
+		android:layout_width="?android:attr/listPreferredItemHeight"
+		android:textOff="RSA Off" android:textOn="RSA On" android:layout_gravity="center" android:layout_height="50px" android:textSize="12px" android:checked="true" android:enabled="false"/>
+		
+	    <!-- android:layout_weight="1" -->
+	    
+</LinearLayout>

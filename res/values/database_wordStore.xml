@@ -1,0 +1,12 @@
+<resources>
+	<string name="wordStore_database">data</string>
+	<string name="wordStore_table">wordStore</string>
+	<string name="wordStore_version">7</string>
+	<string name="wordStore_columns">word text,occurrence integer</string>
+		<!-- SQL create column syntax create table xxx (..., these entries, ...) -->
+	<string name="wordStore_updates"></string>
+		<!-- SQL queries seperated by ; progressive updates can be added here -->
+	<string name="wordStore_indexlist">create index wordStore_word on wordStore(word);</string>
+		<!-- SQL queries seperated by ; used on successful table creation or update -->
+
+</resources>
